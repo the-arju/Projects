@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <h1>Basic Calculator</h1>
+    <div class="entire">
+        <div class="elements">
+            <input id="output" class="input" type="text" placeholder="0" />
+            <div class="buttons">
+                <button onclick="Clear()" class="btns">AC</button>
+                <button onclick="del()" class="btns">C</button>
+                <button onclick="display('%')" class="btns">%</button>
+                <button onclick="display('/')" class="btns">/</button>
+                <button onclick="display('7')" class="btns">7</button>
+                <button onclick="display('8')" class="btns">8</button>
+                <button onclick="display('9')" class="btns">9</button>
+                <button onclick="display('*')" class="btns">x</button>
+                <button onclick="display('4')" class="btns">4</button>
+                <button onclick="display('5')" class="btns">5</button>
+                <button onclick="display('6')" class="btns">6</button>
+                <button onclick="display('-')" class="btns">-</button>
+                <button onclick="display('1')" class="btns">1</button>
+                <button onclick="display('2')" class="btns">2</button>
+                <button onclick="display('3')" class="btns">3</button>
+                <button onclick="display('+')" class="btns">+</button>
+                <button onclick="display('00')" class="btns">00</button>
+                <button onclick="display('0')" class="btns">0</button>
+                <button onclick="Calculate()" class="btns equal">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let output = document.getElementById("output");
+
+        function display(num){
+            output.value = output.value+num;
+        }
+        function Calculate(){
+            try{
+                output.value = eval(output.value);
+            }
+            catch(err){
+                alert("Invalid input")
+            }
+        }
+        function Clear(){
+            output.value = "";
+        }
+        function del(){
+            output.value = output.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
